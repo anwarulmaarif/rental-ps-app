@@ -6,6 +6,7 @@ use App\Livewire\RentalManager;
 use App\Livewire\ReportManager;
 use App\Livewire\UnitManager;
 use App\Livewire\Login;
+use App\Livewire\Profile;
 
 // Halaman Login (Hanya untuk yang belum login)
 Route::get('/login', Login::class)->name('login')->middleware('guest');
@@ -15,12 +16,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/', RentalManager::class)->name('kasir');
     Route::get('/laporan', ReportManager::class)->name('laporan');
     Route::get('/pengaturan', UnitManager::class)->name('pengaturan');
+    Route::get('/profil', Profile::class)->name('profil');
     
-    // Route khusus untuk Logout
-    Route::get('/logout', function () {
-        Auth::logout();
-        session()->invalidate();
-        session()->regenerateToken();
-        return redirect('/login');
-    })->name('logout');
 });
