@@ -18,6 +18,7 @@ return new class extends Migration
         $table->decimal('durasi', 5, 2); 
         $table->integer('tarif_per_jam')->default(5000);
         $table->integer('total_biaya');
+        $table->boolean('is_lunas')->default(true);
         $table->dateTime('jam_mulai');
         $table->dateTime('jam_selesai');
         
