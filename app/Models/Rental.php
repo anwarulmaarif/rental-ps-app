@@ -11,7 +11,7 @@ class Rental extends Model
     protected $fillable = [
         'nama_unit', 'nama_penyewa', 'durasi', 
         'tarif_per_jam', 'total_biaya', 'jam_mulai', 
-        'jam_selesai', 'is_deleted', 'tgl_hapus', 'is_lunas'
+        'jam_selesai', 'is_deleted', 'tgl_hapus', 'is_lunas', 'created_at'
     ];
 
     // LOGIC: Mengubah 0,5 (koma) menjadi 0.5 (titik) sebelum masuk ke DB
